@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Animation & Append | Enhanced UI</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: white;
+        }
+
+        /* Glassmorphic Container */
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            width: 350px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .container:hover {
+            transform: scale(1.03);
+        }
+
+        /* Text Elements */
+        #paragraph {
+            margin-bottom: 15px;
+            font-size: 18px;
+            color: #f4f4f4;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+        ul li {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            border-radius: 8px;
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+
+        ul li:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        /* Animated Box */
+        .box {
+            width: 100px;
+            height: 100px;
+            background: #007bff;
+            color: white;
+            line-height: 100px;
+            text-align: center;
+            border-radius: 12px;
+            margin: 20px auto;
+            transition: all 0.4s ease-in-out;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Buttons */
+        button {
+            padding: 12px 20px;
+            margin: 8px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            color: white;
+        }
+
+        .btn-append {
+            background: #2ecc71;
+            box-shadow: 0 4px 10px rgba(46, 204, 113, 0.4);
+        }
+
+        .btn-animate {
+            background: #e74c3c;
+            box-shadow: 0 4px 10px rgba(231, 76, 60, 0.4);
+        }
+
+        button:hover {
+            opacity: 0.85;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <p id="paragraph">This is an existing paragraph.</p>
+        <ul id="list">
+            <li>List item 1</li>
+            <li>List item 2</li>
+        </ul>
+        <div class="box" id="box">Animate me!</div>
+        <button class="btn-append" id="appendButton">Append Content</button>
+        <button class="btn-animate" id="animateButton">Animate Box</button>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+
+            $("#appendButton").click(function () {
+                $("#paragraph").append(" Appended text.");
+                $("#list").append("<li>New appended list item</li>");
+            });
+
+            $("#animateButton").click(function () {
+
+                $("#box").stop(true, true).css({
+                    width: "100px",
+                    height: "100px",
+                    opacity: 1,
+                    backgroundColor: "blue"
+                }).animate({
+                    width: "200px",
+                    height: "200px",
+                    opacity: 0.5
+                }, 1000, function () {
+
+                    $(this).css("background-color", "green");
+                });
+            });
+        });
+
+    </script>
+
+</body>
+</html>

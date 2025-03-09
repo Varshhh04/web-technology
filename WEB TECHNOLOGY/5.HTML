@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechNews Hub | Latest Technology Updates</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(90deg, #1a1a2e, #16213e);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            font-size: 26px;
+            font-weight: bold;
+            border-radius: 8px;
+            letter-spacing: 1px;
+        }
+        nav {
+            text-align: center;
+            margin: 20px 0;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #16213e;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #e94560;
+        }
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+        .main-content {
+            flex: 2;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .article {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .article:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        .article img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .article h2 {
+            font-size: 20px;
+            margin: 10px 0;
+            color: #16213e;
+        }
+        .article p {
+            font-size: 14px;
+            color: #555;
+        }
+        aside {
+            flex: 1;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        aside h2 {
+            color: #e94560;
+            margin-bottom: 10px;
+        }
+        aside ul {
+            list-style: none;
+        }
+        aside li {
+            margin-bottom: 10px;
+        }
+        aside a {
+            text-decoration: none;
+            color: #16213e;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        aside a:hover {
+            color: #e94560;
+        }
+        footer {
+            background: linear-gradient(90deg, #1a1a2e, #16213e);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <header>TechNews Hub</header>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">AI</a>
+        <a href="#">Gadgets</a>
+        <a href="#">Cybersecurity</a>
+        <a href="#">Reviews</a>
+    </nav>
+    <div class="container">
+        <main class="main-content">
+            <div class="article">
+                <img src="https://via.placeholder.com/600x300" alt="Tech Image">
+                <h2>AI Revolution: How AI is Shaping Our Future</h2>
+                <p>Artificial Intelligence is transforming industries, from healthcare to finance...</p>
+            </div>
+            <div class="article">
+                <img src="https://via.placeholder.com/600x300" alt="Tech Image">
+                <h2>Top 5 Smartphones of 2025: Features & Performance</h2>
+                <p>Discover the latest smartphones that are leading the market with innovation...</p>
+            </div>
+            <div class="article">
+                <img src="https://via.placeholder.com/600x300" alt="Tech Image">
+                <h2>Cybersecurity Threats: How to Stay Protected</h2>
+                <p>Learn about the latest cyber threats and best practices to keep your data safe...</p>
+            </div>
+        </main>
+        <aside>
+            <h2>Featured News</h2>
+            <ul>
+                <li><a href="#">Quantum Computing Breakthrough Announced</a></li>
+                <li><a href="#">Electric Cars: What’s Next?</a></li>
+                <li><a href="#">Tech CEOs Predict the Future of Innovation</a></li>
+            </ul>
+        </aside>
+    </div>
+    <footer>&copy; 2025 TechNews Hub | All Rights Reserved</footer>
+</body>
+</html>
