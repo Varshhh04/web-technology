@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<head>
+
+    <title>Time Table </title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color:rgb(180, 243, 243);
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #070606;
+            padding: 8px;
+            text-align: center;
+
+        }
+
+        th {
+            background-color: rgb(0, 149, 255);
+            color: #333;
+        }
+
+
+        tr:nth-child(even) {
+            background-color: rgb(237, 133, 133);
+        }
+
+        tr:nth-child(odd) {
+            background-color:rgb(239, 116, 116);
+        }
+
+        .lab-hour {
+            background-color:pink;
+        }
+
+        .elective-hour {
+            background-color:greenyellow;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: rgb(8, 1, 1);
+        }
+
+        
+ 
+        .lunch {
+            background-color: rgb(61, 220, 159);
+        }
+
+
+        tfoot {
+            background-color:blue;
+            font-weight: bold;
+        }
+        
+
+
+
+
+    </style>
+</head>
+
+<body>
+    <marquee><h2>table created for day-time.</h2></marquee>
+    <h1>Time Table</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Day/Time</th>
+                <th>8:45 - 9:45</th>
+                <th>9:45 - 10:45</th>
+                <th>11:00 - 12:00</th>
+                <th>12:00 - 1:00</th>
+                <th class="lunch">1:00 - 2:00</th>
+                <th>2:00 - 3:00</th>
+                <th>3:00 - 4:00</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Monday</td>
+                <td>EVS</td>
+                <td>LANG </td>
+                <td colspan="2" class="lab-hour">WEB Lab</td>
+                <td rowspan="5" class="lunch">Lunch Break</td>
+                <td class="elective-hour">Elective</td>
+                <td>AI</td>
+            </tr>
+            <tr>
+                <td>Tuesday</td>
+                <td class="elective-hour">Elective</td>
+                <td>SEPM</td>
+                <td>MP</td>
+                <td class="lab-hour">CN Lab</td>
+                <td>RESE</td>
+                <td>CN</td>
+            </tr>
+            <tr>
+                <td>Wednesday</td>
+                <td>CN</td>
+                <td class="lab-hour">WEB</td>
+                <td>TOC</td>
+                <td>MP</td>
+                <td>AI</td>
+                <td class="elective-hour">Elective</td>
+            </tr>
+            <tr>
+                <td>Thursday</td>
+                <td>SEPM</td>
+                <td>PL</td>
+                <td>CN</td>
+                <td class="elective-hour">Elective</td>
+                <td>RESEARCH</td>
+                <td>MP</td>
+            </tr>
+            <tr>
+                <td>Friday</td>
+                <td class="lab-hour">CN Lab</td>
+                <td>EVS</td>
+                <td>TOC</td>
+                <td>SEMP</td>
+                <td class="elective-hour">Elective</td>
+                <td>CN</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="8"> END </td>
+            </tr>
+        </tfoot>
+    </table>
+
+</body>
+
+</html>
