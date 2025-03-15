@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .calculator {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .display {
+            height: 60px;
+            background-color: #e8e8e8;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: right;
+            font-size: 1.8rem;
+            padding: 10px;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        .button-row {
+            display: flex;
+            gap: 10px;
+        }
+        button {
+            flex: 1;
+            height: 60px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+        }
+        button.operation {
+            background-color: #007bff;
+        }
+        button.equal {
+            background-color: #28a745;
+            flex: 2;
+        }
+        button.clear {
+            background-color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div class="display" id="display">0</div>
+        <div class="button-row">
+            <button onclick="performOperation('clear')" class="clear">C</button>
+            <button onclick="performOperation('%')" class="operation">%</button>
+            <button onclick="performOperation('backspace')">←</button>
+            <button onclick="performOperation('/')" class="operation">÷</button>
+        </div>
+        <div class="button-row">
+            <button onclick="performOperation('√')" class="operation">sqrt</button>
+            <button onclick="performOperation('x²')" class="operation">sqr</button>
+            <button onclick="performOperation('**')" class="operation">pow</button>
+        </div>
+        <div class="button-row">
+            <button onclick="performOperation('7')">7</button>
+            <button onclick="performOperation('8')">8</button>
+            <button onclick="performOperation('9')">9</button>
+            <button onclick="performOperation('*')" class="operation">×</button>
+        </div>
+        <div class="button-row">
+            <button onclick="performOperation('4')">4</button>
+            <button onclick="performOperation('5')">5</button>
+            <button onclick="performOperation('6')">6</button>
+            <button onclick="performOperation('-')" class="operation">−</button>
+        </div>
+        <div class="button-row">
+            <button onclick="performOperation('1')">1</button>
+            <button onclick="performOperation('2')">2</button>
+            <button onclick="performOperation('3')">3</button>
+            <button onclick="performOperation('+')" class="operation">+</button>
+        </div>
+        <div class="button-row">
+            <button onclick="performOperation('0')">0</button>
+            <button onclick="performOperation('.')">.</button>
+            <button onclick="performOperation('=')" class="equal">=</button>
+        </div>
+    </div>
+    <script>
+        const display = document.getElementById('display');
+        function performOperation(operation) {
+            switch (operation) {
+                case 'clear':
+                    display.textContent = '0';
+                    break;
+                case 'backspace':
+                    display.textContent = display.textContent.slice(0, -1) || '0';
+                    break;
+                case '=':
+                    display.textContent = eval(display.textContent) || 'Error';
+                    break;
+                case '√':
+                    display.textContent = Math.sqrt(eval(display.textContent)) || 'Error';
+                    break;
+                case 'x²':
+                    display.textContent = Math.pow(eval(display.textContent), 2) || 'Error';
+                    break;
+                default:
+                    display.textContent === '0' ? display.textContent = operation : display.textContent += operation;
+            }
+        }
+    </script>
+</body>
+</html>
